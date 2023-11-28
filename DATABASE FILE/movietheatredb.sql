@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 15, 2021 at 08:23 PM
--- Server version: 5.6.21
--- PHP Version: 5.6.3
+-- Generation Time: Nov 28, 2023 at 06:36 PM
+-- Server version: 10.4.20-MariaDB
+-- PHP Version: 8.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -47,7 +48,9 @@ CREATE TABLE `tbl_bookings` (
 INSERT INTO `tbl_bookings` (`book_id`, `ticket_id`, `t_id`, `user_id`, `show_id`, `screen_id`, `no_seats`, `amount`, `ticket_date`, `date`, `status`) VALUES
 (12, 'BKID6369842', 4, 4, 17, 3, 1, 380, '2021-04-15', '2021-04-15', 1),
 (13, 'BKID2313964', 6, 5, 21, 6, 4, 2400, '2021-04-16', '2021-04-15', 1),
-(14, 'BKID1766021', 6, 5, 22, 6, 2, 1200, '2021-04-16', '2021-04-16', 1);
+(14, 'BKID1766021', 6, 5, 22, 6, 2, 1200, '2021-04-16', '2021-04-16', 1),
+(17, 'BKID3827077', 4, 6, 24, 8, 3, 120000, '2023-11-28', '2023-11-28', 1),
+(19, 'BKID4212411', 4, 6, 25, 8, 2, 80000, '2023-11-28', '2023-11-29', 1);
 
 -- --------------------------------------------------------
 
@@ -89,7 +92,9 @@ INSERT INTO `tbl_login` (`id`, `user_id`, `username`, `password`, `user_type`) V
 (15, 14, 'USR295127', 'PWD195747', 1),
 (17, 4, 'bruno@gmail.com', 'password', 2),
 (18, 6, 'THR760801', 'PWD649976', 1),
-(19, 5, 'james@gmail.com', 'password', 2);
+(19, 5, 'james@gmail.com', 'password', 2),
+(20, 20, 'faiz@gmail.com', 'password', 2),
+(21, 6, 'danar@gmail.com', 'password', 2);
 
 -- --------------------------------------------------------
 
@@ -115,10 +120,12 @@ CREATE TABLE `tbl_movie` (
 
 INSERT INTO `tbl_movie` (`movie_id`, `t_id`, `movie_name`, `cast`, `desc`, `release_date`, `image`, `video_url`, `status`) VALUES
 (1, 3, 'The Invisible Man', 'Elisabeth Moss, Oliver Jackson-Cohen, Aldis Hodge, Storm Reid', 'Cecilia\'s abusive ex-boyfriend fakes his death and becomes invisible to stalk and torment her. She begins experiencing strange events and decides to hunt down the truth on her own.', '2020-03-04', 'images/tim.jpg', 'https://www.youtube.com/watch?v=WO_FJdiY9dA', 0),
+(2, 3, 'SRI ASIH', 'Pevita Pearce', 'film indonesia', '2023-11-27', 'images/sriasih.jpeg', 'https://youtu.be/564eG_1Mvf0?si=5dxSu07zi0xCPosw', 0),
+(10, 6, 'Justice League', 'Ben Affleck, Henry Cavil, Ezra Miller', 'This is a demo description for the movie ZSJL.', '2021-03-22', 'images/zsjl.jpg', 'https://www.youtube.com/watch?v=vM-Bja2Gy04', 0),
 (11, 6, 'Cherry', 'Tom Holland, Ciara Bravo, Harry Holland, Kelli Berglund', 'Cherry (Tom Holland) drifts from college dropout to army medic in Iraq-anchored only by his one true love, Emily (Ciara Bravo). But after returning from the war with PTSD, his life spirals into drugs.', '2021-03-01', 'images/cherry.jpg', 'https://www.youtube.com/watch?v=H5bH6O0bErk', 0),
 (12, 6, 'Godzilla vs. Kong', 'Millie Bobby Brown, Alexander Skarsgard, Rebecca Hall', 'The initial confrontation between the two titans -- instigated by unseen forces -- is only the beginning of the mystery that lies deep within the core of the planet.', '2021-03-31', 'images/gvkpster.jpg', 'https://www.youtube.com/watch?v=odM92ap8_c0', 0),
 (13, 6, 'Outside the Wire', 'Anthony Mackie, Damson Idris, Emily Beecham', 'In the near future, a drone pilot sent into a war zone finds himself paired up with a top-secret android officer on a mission to stop a nuclear attack.', '2021-01-28', 'images/otw.jpg', 'https://www.youtube.com/watch?v=u8ZsUivELbs', 0),
-(17, 6, 'Justice League', 'Ben Affleck, Henry Cavil, Ezra Miller', 'This is a demo description for the movie ZSJL.', '2021-03-22', 'images/zsjl.jpg', 'https://www.youtube.com/watch?v=vM-Bja2Gy04', 0);
+(19, 3, 'ASHIAP MAN', 'Atta Petir', 'Film Super Hero Indonesia', '2023-11-26', 'images/ashiapman.webp', 'https://youtu.be/40BEiMgXwLs?si=DNcj6QNiC3_5i5zm', 0);
 
 -- --------------------------------------------------------
 
@@ -166,7 +173,8 @@ CREATE TABLE `tbl_registration` (
 INSERT INTO `tbl_registration` (`user_id`, `name`, `email`, `phone`, `age`, `gender`) VALUES
 (2, 'Harry Den', 'harryden@gmail.com', '1247778540', 22, 'gender'),
 (4, 'Bruno', 'bruno@gmail.com', '7451112450', 30, 'gender'),
-(5, 'James', 'james@gmail.com', '7124445696', 25, 'gender');
+(5, 'James', 'james@gmail.com', '7124445696', 25, 'gender'),
+(6, 'Danar', 'danar@gmail.com', '081273412022', 21, 'gender');
 
 -- --------------------------------------------------------
 
@@ -192,7 +200,8 @@ INSERT INTO `tbl_screens` (`screen_id`, `t_id`, `screen_name`, `seats`, `charge`
 (3, 4, 'Screen 1', 200, 380),
 (4, 14, 'Screen1', 34, 250),
 (5, 6, 'Demo Screen', 150, 300),
-(6, 6, 'IMX Screen', 200, 600);
+(6, 6, 'IMX Screen', 200, 600),
+(8, 4, 'VIP', 50, 40000);
 
 -- --------------------------------------------------------
 
@@ -218,7 +227,9 @@ INSERT INTO `tbl_shows` (`s_id`, `st_id`, `theatre_id`, `movie_id`, `start_date`
 (19, 15, 6, 11, '2021-04-15', 0, 1),
 (20, 20, 6, 13, '2021-04-15', 0, 1),
 (21, 19, 6, 12, '2021-03-31', 1, 1),
-(22, 18, 6, 17, '2021-04-16', 1, 1);
+(22, 18, 6, 17, '2021-04-16', 1, 1),
+(24, 24, 4, 2, '2023-11-29', 1, 1),
+(25, 25, 4, 2, '2023-11-29', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -257,7 +268,11 @@ INSERT INTO `tbl_show_time` (`st_id`, `screen_id`, `name`, `start_time`) VALUES
 (18, 6, 'Noon', '00:02:00'),
 (19, 6, 'First', '06:35:00'),
 (20, 6, 'Second', '09:18:00'),
-(21, 5, 'Matinee', '20:04:00');
+(21, 5, 'Matinee', '20:04:00'),
+(22, 7, 'Noon', '10:00:00'),
+(23, 7, 'First', '15:00:00'),
+(24, 8, 'Noon', '22:00:00'),
+(25, 8, 'First', '13:00:00');
 
 -- --------------------------------------------------------
 
@@ -356,52 +371,63 @@ ALTER TABLE `tbl_theatre`
 -- AUTO_INCREMENT for table `tbl_bookings`
 --
 ALTER TABLE `tbl_bookings`
-  MODIFY `book_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `book_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
 --
 -- AUTO_INCREMENT for table `tbl_contact`
 --
 ALTER TABLE `tbl_contact`
   MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `tbl_login`
 --
 ALTER TABLE `tbl_login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
 --
 -- AUTO_INCREMENT for table `tbl_movie`
 --
 ALTER TABLE `tbl_movie`
-  MODIFY `movie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `movie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
 --
 -- AUTO_INCREMENT for table `tbl_news`
 --
 ALTER TABLE `tbl_news`
-  MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
 --
 -- AUTO_INCREMENT for table `tbl_registration`
 --
 ALTER TABLE `tbl_registration`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- AUTO_INCREMENT for table `tbl_screens`
 --
 ALTER TABLE `tbl_screens`
-  MODIFY `screen_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `screen_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
 -- AUTO_INCREMENT for table `tbl_shows`
 --
 ALTER TABLE `tbl_shows`
-  MODIFY `s_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `s_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
 --
 -- AUTO_INCREMENT for table `tbl_show_time`
 --
 ALTER TABLE `tbl_show_time`
-  MODIFY `st_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `st_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
 --
 -- AUTO_INCREMENT for table `tbl_theatre`
 --
 ALTER TABLE `tbl_theatre`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

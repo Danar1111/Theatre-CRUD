@@ -200,6 +200,7 @@
 	-o-transition: all 0.2s ease-out;
 	transition: all 0.2s ease-out;
 	margin-bottom: 20px;
+  width: 10%;
 }
 .imageRow .single a:hover {
 	background: #DB9603;

@@ -15,7 +15,7 @@
                     
                     <div class="col_1_of_4 span_1_of_4">
 					<div class="imageRow">
-						  	<div class="single">
+						  	<div class="singles">
 						  		<?php
 						
 						?>

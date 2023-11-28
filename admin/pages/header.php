@@ -120,7 +120,6 @@ include('../../config.php');
             </span>
           </a>
         </li>
-        
           <li class="treeview">
           <a href="add_theatre.php">
             <i class="fa fa-film"></i> <span>Add Theatre</span>
@@ -129,9 +128,26 @@ include('../../config.php');
             </span>
           </a>
         </li>
+        </li>
+          <li class="treeview">
+          <a href="list_theatre.php">
+            <i class="fa fa-list-alt"></i> <span>List Theatre</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+        </li>
         <li class="treeview">
           <a href="add_movie_news.php">
             <i class="fa fa-plus"></i> <span>Upcoming Movie News</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+        </li>
+        <li class="treeview">
+          <a href="list_upcoming.php">
+            <i class="fa fa-list"></i> <span>List Upcoming Movie</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>

@@ -12,16 +12,15 @@
 				</div>
 				<div class="col_1_of_4 span_1_of_4">
 					<div class="textcontact">
-						<p>Theatre Assistance<br>
-						Online Movie Theatre Booking System<br>
-						Ph: 6969786969<br>
+						<p>Theatre Booking Tickets<br>
+						Online Movie Theatre Booking TIcket<br>
 						</p>
 					</div>
 				</div>
 				<div class="col_1_of_4 span_1_of_4">
 					<div class="call_info">
-						<p class="txt_3">Call us toll free:</p>
-						<p class="txt_4">1 200 696 39669</p>
+						<p class="txt_3">Call For Ask:</p>
+						<p class="txt_4">1 234 567890</p>
 					</div>
 				</div>
 				<div class="col_1_of_4 span_1_of_4">

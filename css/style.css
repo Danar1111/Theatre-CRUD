@@ -181,6 +181,11 @@ nav.horizontal ul li {
 img {
   max-width: 100%;
 }
+.header .header-top img{
+  max-width: 50%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
 /*end reset*/
 @font-face {
   font-family: "AmbleRegular";
